@@ -9,6 +9,7 @@ load_dotenv()
 
 ## TODO: link to google sheet to get meeting detailed information
 meeting_time = "9/12 meeting"
+title = f"New note for {meeting_time}"
 presentation_people = ["敬淇", "宥成"]
 followup_people = ['志翔', '昭融']
 
@@ -26,7 +27,7 @@ headers = {
 }
 
 new_note_data = {
-    "title": "New note from Python",
+    "title": title,
     "content": new_note_content,
     "readPermission": "guest",  # Options: 'owner', 'signed_in', 'guest'
     "writePermission": "signed_in",  # Options: 'owner', 'signed_in', 'guest'
