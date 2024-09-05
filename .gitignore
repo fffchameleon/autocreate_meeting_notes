@@ -1,0 +1,5 @@
+myenv/*
+.env
+sheet_key.json
+sheets.py
+__pycache__
