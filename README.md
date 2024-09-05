@@ -1,5 +1,6 @@
 # autocreate_meeting_notes
 Automatically create meeting notes for CILab members.
+
 **This script is still in the development stage. We aim to automatically read the meeting schedule from a Google Sheet every week and generate notes automatically.**
 
 ## Get HackMD API Token
