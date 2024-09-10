@@ -1,5 +1,5 @@
 def create_template(meeting_time, presentation_people, followup_people):
-    template_content = f"# {meeting_time}\n\n"
+    template_content = f"# {meeting_time} meeting\n\n"
     template_content += "## Follow up\n"
     for person in followup_people:
         template_content += f"### {person}\n\n"

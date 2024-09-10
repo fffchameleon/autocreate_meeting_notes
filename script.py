@@ -21,7 +21,7 @@ def create_hackmd_note(meeting_time, new_note_content):
         "Content-Type": "application/json"
     }
 
-    new_note_data = {
+    new_note_data = {        
         "title": f"New note for {meeting_time}",
         "content": new_note_content,
         "readPermission": "guest",
