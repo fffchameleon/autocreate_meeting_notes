@@ -3,3 +3,4 @@ myenv/*
 sheet_key.json
 sheets.py
 __pycache__
+script_archived.py
