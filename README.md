@@ -15,5 +15,5 @@ Automatically create meeting notes for CILab members.
 3. Run `python3 script.py` to generate the meeting notes.
 
 ## Future Work
-1. Integrate with Google Sheets to automatically retrieve meeting schedule information.
-2. Fix the bug in `script.py` to automatically move the previous week's notes to the "Past Meeting" section.
+1. Integrate with Google Sheets to automatically retrieve meeting schedule information. (finished)
+2. Fix the bug in `script.py` to automatically move the previous week's notes to the "Past Meeting" section. (finished)
