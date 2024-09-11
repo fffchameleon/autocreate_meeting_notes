@@ -17,7 +17,7 @@ def update_row_variable(row_variable):
 # wks.export(pygsheets.ExportType.CSV)
 def get_meeting_date():
     load_dotenv()
-    gc = pygsheets.authorize(service_file='sheet_key.json')
+    gc = pygsheets.authorize(service_file=os.getenv("SHEET_KEY_PATH"))
     sht = gc.open_by_url(os.getenv("SHEET_URL"))
 
     wks = sht[0]
