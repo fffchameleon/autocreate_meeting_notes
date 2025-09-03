@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: Write GCP credentials to file
         run: |
-          echo "${{ secrets.GCP_CREDENTIALS }}" > $HOME/sheet_key.json
+          printf '%s' '${{ secrets.SHEET_KEY_PATH }}' > "$HOME/sheet_key.json"
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -51,6 +51,6 @@ jobs:
         env:
           HACKMD_TOKEN: ${{ secrets.HACKMD_TOKEN }}
           HACKMD_NOTEID: ${{ secrets.HACKMD_NOTEID }}
-          SHEET_KEY_PATH: $HOME/sheet_key.json
+          SHEET_KEY_PATH: ${{ env.HOME }}/sheet_key.json
           SHEET_URL: ${{ secrets.SHEET_URL }}
         run: python ./run.py
