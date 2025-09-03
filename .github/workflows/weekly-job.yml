@@ -59,7 +59,7 @@ jobs:
       - name: Ensure state file
         run: |
           mkdir -p .state
-          [ -f .state/cur_row.conf ] || printf '2\n' > .state/cur_row.conf
+          [ -f .state/cur_row.conf ] || printf '1\n' > .state/cur_row.conf
 
       - name: Run Python script
         env:
