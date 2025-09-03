@@ -5,14 +5,30 @@ import os
 from dotenv import load_dotenv
 import subprocess
 
-def get_row_variable():
-    with open('cur_row.conf', 'r') as file:
-        row_variable = int(file.readline().strip())
-    return row_variable
+#def get_row_variable():
+#    with open('cur_row.conf', 'r') as file:
+#        row_variable = int(file.readline().strip())
+#    return row_variable
 
-def update_row_variable(row_variable):
-    with open('cur_row.conf', 'w') as file:
-        file.write(str(row_variable))
+#def update_row_variable(row_variable):
+#    with open('cur_row.conf', 'w') as file:
+#        file.write(str(row_variable))
+from pathlib import Path
+
+STATE_FILE = Path(".state/cur_row.conf")
+
+def get_row_variable() -> int:
+    try:
+        return int(STATE_FILE.read_text().strip())
+    except FileNotFoundError:
+        STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        STATE_FILE.write_text("1\n")
+        return 0
+
+def set_row_variable(v: int) -> None:
+    STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    STATE_FILE.write_text(f"{int(v)}\n")
+
 
 # wks.export(pygsheets.ExportType.CSV)
 def get_meeting_date():
