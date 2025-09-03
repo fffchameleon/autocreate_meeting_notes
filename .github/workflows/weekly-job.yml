@@ -49,6 +49,18 @@ jobs:
       - name: Install deps
         if: hashFiles('requirements.txt') != ''
         run: pip install -r requirements.txt
+      - name: Restore state cache
+        uses: actions/cache@v4
+        with:
+          path: .state/
+          key: state-${{ github.run_number }}
+          restore-keys: |
+            state-
+      - name: Ensure state file
+        run: |
+          mkdir -p .state
+          [ -f .state/cur_row.conf ] || printf '2\n' > .state/cur_row.conf
+
       - name: Run Python script
         env:
           HACKMD_TOKEN: ${{ secrets.HACKMD_TOKEN }}
