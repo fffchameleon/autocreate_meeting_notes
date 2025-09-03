@@ -51,6 +51,6 @@ jobs:
         env:
           HACKMD_TOKEN: ${{ secrets.HACKMD_TOKEN }}
           HACKMD_NOTEID: ${{ secrets.HACKMD_NOTEID }}
-          SHEET_KEY_PATH: $HOME/gcp-key.json
+          SHEET_KEY_PATH: $HOME/sheet_key.json
           SHEET_URL: ${{ secrets.SHEET_URL }}
         run: python ./run.py
