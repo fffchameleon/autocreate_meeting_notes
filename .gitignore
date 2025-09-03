@@ -1,4 +1,5 @@
-myenv/*
+exp_venv/*
+tmp
 .env
 sheet_key.json
 __pycache__
