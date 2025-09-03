@@ -25,6 +25,10 @@ jobs:
     timeout-minutes: 15
 
     steps:
+      - name: Write GCP credentials to file
+        run: |
+          echo "${{ secrets.GCP_CREDENTIALS }}" > $HOME/sheet_key.json
+
       - name: Checkout
         uses: actions/checkout@v4
 
