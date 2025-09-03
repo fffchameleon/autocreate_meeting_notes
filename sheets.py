@@ -25,7 +25,7 @@ def get_row_variable() -> int:
         STATE_FILE.write_text("1\n")
         return 0
 
-def set_row_variable(v: int) -> None:
+def update_row_variable(v: int) -> None:
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     STATE_FILE.write_text(f"{int(v)}\n")
 
